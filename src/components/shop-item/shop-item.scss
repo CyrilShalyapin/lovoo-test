@@ -1,0 +1,27 @@
+.shop-item {
+  margin: 8px;
+  border: 2px solid #e3e3e3;
+  border-bottom-color: darkgray;
+  border-right-color: darkgray;
+  box-sizing: border-box;;
+  width: 400px;
+
+  h3 {
+    background-color: blue;
+    color: white;
+    padding: 4px;
+    margin: 0;
+  }
+
+  .image {
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    background: #ebebeb;
+
+    img {
+      max-height: 200px;
+      max-width: 100%
+    }
+  }
+}

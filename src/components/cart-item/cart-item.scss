@@ -1,0 +1,24 @@
+.cart-item {
+  border: 1px solid black;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  .image {
+    display: flex;
+    align-items: center;
+    img {
+      width: 200px;
+    }
+  }
+
+  .title {
+    box-sizing: border-box;
+    width: 200px;
+    padding: 0 16px;
+  }
+
+  .price {
+    width: 200px;
+  }
+}
