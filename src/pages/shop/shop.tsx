@@ -14,9 +14,8 @@ const Shop = (props: ShopProps) => {
       {
         props.items.map(item => {
           return (
-            <React.Suspense fallback='Loading Item...'>
+            <React.Suspense key={item.id} fallback='Loading Item...'>
               <LazyShopItem
-                key={item.id}
                 description={item.description}
                 id={item.id}
                 price={item.price}
