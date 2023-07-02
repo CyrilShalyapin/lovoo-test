@@ -11,27 +11,31 @@ type CartProps = {
 }
 
 const Cart = (props: CartProps) => {
-  const { cartItems } = useContext(ShopContext);
+  const { cartItems, deleteCart } = useContext(ShopContext);
+  const isEmpty = useMemo(() => Object.keys(cartItems).length === 0, [cartItems])
+
   return (
     <div className="cart">
       <h1>Cart</h1>
       <ol>
         {props.items.map(item => {
           const { id, price, title, thumbnail } = item;
-          return cartItems?.[item.id] ?
+          return cartItems[item.id] ?
             <li key={item.id}>
               <CartItem
-                price={price}
-                title={title}
                 id={id}
+                price={price}
                 thumbnail={thumbnail}
+                title={title}
               />
             </li> : false;
         })}
       </ol>
+      {isEmpty && <p>Cart is empty</p>}
       <div>
-        <Link to='/checkout'><TextButton text='Checkout' /></Link>
+        {!isEmpty && <Link to='/checkout'><TextButton text='Checkout' /></Link>}
         <Link to='/'><TextButton text='Continue Shopping' /></Link>
+        {!isEmpty && <TextButton onClick={deleteCart} text='Clear cart' />}
       </div>
     </div>
   )

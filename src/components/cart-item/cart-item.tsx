@@ -1,5 +1,3 @@
-import { useContext } from 'react'
-import { ShopContext } from '../../context/shop-context';
 import Stepper from '../stepper/stepper'
 import './cart-item.scss'
 
@@ -11,7 +9,6 @@ type CartItemProps = {
 }
 
 const CartItem = (props: CartItemProps) => {
-  const { cartItems } = useContext(ShopContext)
   const {id, price, title, thumbnail} = props;
   return (
     <div className='cart-item'>
@@ -19,7 +16,7 @@ const CartItem = (props: CartItemProps) => {
         <img src={thumbnail} alt='image' loading='lazy'/>
       </div>
       <p className='title'>{title}</p>
-      <p className='price'>${cartItems && (cartItems?.[id] * price)}</p>
+      <p className='price'>${price}</p>
       <Stepper id={id} />
     </div>
   )

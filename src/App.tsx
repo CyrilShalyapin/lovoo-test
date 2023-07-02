@@ -9,11 +9,12 @@ const LazyCart = React.lazy(() => import('./pages/cart/cart'))
 const LazyShop = React.lazy(() => import('./pages/shop/shop'))
 const LazyCheckout = React.lazy(() => import('./pages/checkout/checkout'))
 
-function App() {
+const App = () => {
 
   const [items, setItems] = useState<ItemType[]>([]);
 
   useEffect((): void => {
+    console.log('get data')
     const getData = async (): Promise<void> => {
       try {
         const res: Response = await fetch('https://dummyjson.com/products')

@@ -15,10 +15,10 @@ const Stepper = (props: StepperProps) => {
   return (
     <div className='stepper'>
       <div>
-        <TextButton onClick={() => deleteCartItem && deleteCartItem(id)} text='Delete' />
-        <TextButton onClick={() => removeFromCart && removeFromCart(id)} text='-' />
-        <input type="text" value={count} onChange={(e) => setCartItemAmount && setCartItemAmount(id, Number(e.target.value))} />
-        <TextButton onClick={() => addToCart && addToCart(id)} text='+' />
+        <TextButton onClick={() => deleteCartItem(id)} text='Delete' />
+        <TextButton onClick={() => removeFromCart(id)} text='-' />
+        <input type="text" value={count} onChange={(e) => setCartItemAmount(id, Number(e.target.value))} />
+        <TextButton onClick={() => addToCart(id)} text='+' />
       </div>
     </div>
   )

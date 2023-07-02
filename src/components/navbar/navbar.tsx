@@ -7,7 +7,7 @@ const Navbar = () => {
       <header>
         <div className='logo'>
           <img src="/src/assets/lovoo-logo-new-no-type.svg" alt="" />
-          <h1>Kiryl's Shop</h1>
+          <h1>LOVOO x Kiryl</h1>
         </div>
         <nav>
           <ul>

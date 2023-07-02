@@ -32,13 +32,11 @@ const ShopItem = (props: ShopItemProps) => {
         <img src={thumbnail} alt="item thumbnail" loading='lazy' />
       </div>
       <p className='description'>{description}</p>
-      <div className='numbers'>
-        <p>${price}</p>
-        {
-          count ? <Stepper id={id} /> :
-            <div><TextButton onClick={() => addToCart && addToCart(id)} text='Add to cart' /></div>
-        }
-      </div>
+      <p>${price}</p>
+      {
+        count ? <Stepper id={id} /> :
+          <div><TextButton onClick={() => addToCart(id)} text='Add to cart' /></div>
+      }
     </div>
   )
 }
